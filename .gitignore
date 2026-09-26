@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+.venv/
+.venv*/
+venv/
+ENV/
+env/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter / IDEs
+.ipynb_checkpoints
+.vscode/
+.idea/
+
+# HuggingFace & Torch cache if local
+.cache/
+models/
+
+# OS specific
+.DS_Store
+Thumbs.db

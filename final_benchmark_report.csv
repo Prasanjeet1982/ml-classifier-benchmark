@@ -1,0 +1,6 @@
+Model,Model Type,Supervised Samples Needed,Accuracy (%),Macro F1,Latency p50 (ms),Latency p95 (ms),Latency Mean (ms),Train/Embedding Time (s),Test Samples Evaluated
+TF-IDF + LogisticRegression,Traditional (Sparse Linear),400,98.5,0.9851,2.5268,3.1888,2.6245,0.3868,200
+TF-IDF + HistGradientBoosting,Traditional (Gradient Boosted Trees),400,93.5,0.9355,14.4906,29.5364,20.1663,25.8362,200
+MiniLM Embeddings + LogisticRegression,Dense Embedding (Few-Shot/Supervised),400,97.5,0.9752,18.7876,38.715,21.1277,1.9237,200
+DeBERTa-v3 Zero-Shot (Jev Proxy),Zero-Shot Foundation Model (Jev Proxy),0,92.5,0.9248,198.4857,379.2022,246.3929,0.0,200
+FLAN-T5-Base Zero-Shot,Generative Foundation Model (Zero-Shot),0,90.5,0.9061,296.8712,444.835,291.6917,0.0,200
