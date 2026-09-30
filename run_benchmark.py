@@ -13,6 +13,7 @@ import sys
 from src.benchmark import run_full_benchmark
 from src.data_loader import TARGET_CLASSES, prepare_benchmark_dataset
 from src.models import (
+    Clm8bZeroShotModel,
     DebertaZeroShotModel,
     DenseEmbeddingLogisticRegressionModel,
     FlanT5ZeroShotModel,
@@ -78,6 +79,12 @@ def parse_args():
         default=default_dev,
         help=f"Execution device for neural models ('cpu' or 'cuda', default: '{default_dev}').",
     )
+    parser.add_argument(
+        "--include-clm",
+        action="store_true",
+        default=False,
+        help="Include NVIDIA/Stanford CLM-8B (4-bit NF4 quantized) in the benchmark.",
+    )
     return parser.parse_args()
 
 
@@ -141,6 +148,16 @@ def main():
             device=args.device,
         ),
     ]
+
+    if args.include_clm:
+        logger.info("Including NVIDIA/Stanford CLM-8B (4-bit NF4) in the benchmark suite...")
+        models.append(
+            Clm8bZeroShotModel(
+                base_model_name="Qwen/Qwen3-8B",
+                target_classes=TARGET_CLASSES,
+                device=args.device,
+            )
+        )
 
     # Step 3: Run full benchmark loop
     logger.info("Starting execution of benchmark pipeline...")

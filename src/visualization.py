@@ -48,6 +48,7 @@ def generate_benchmark_chart(
         "MiniLM Embeddings + LogisticRegression": "MiniLM + LogReg\n(400 samples)",
         "DeBERTa-v3 Zero-Shot (Jev Proxy)": "DeBERTa Zero-Shot (Jev)\n(0 samples)",
         "FLAN-T5-Base Zero-Shot": "FLAN-T5 Zero-Shot\n(0 samples)",
+        "NVIDIA/Stanford CLM-8B (4-bit)": "CLM-8B (4-bit)\n(0 samples)",
     }
     model_labels = [name_map.get(m, m) for m in report_df["Model"]]
     x = np.arange(len(model_labels))

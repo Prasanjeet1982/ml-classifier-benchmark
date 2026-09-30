@@ -10,3 +10,8 @@ numpy>=1.26.0
 pandas>=2.0.0
 matplotlib>=3.8.0
 tqdm>=4.66.0
+
+# Quantization & Acceleration (RTX 4060 8GB support)
+accelerate>=1.0.0
+bitsandbytes>=0.45.0
+
